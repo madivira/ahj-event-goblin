@@ -6,7 +6,7 @@ export default class MovingGoblin {
 
   static init() {
     const gameboard = document.getElementsByClassName('game-board')[0];
-
+    gameboard.style = 'cursor: url("../src/img/hammer.png"), auto';
     for (let i = 4; i > 0; i -= 1) {
       const raw = document.createElement('div');
       raw.className = `raw-${i}`;
@@ -20,7 +20,7 @@ export default class MovingGoblin {
 
     const column = document.getElementsByClassName('column');
     for (const element of column) {
-      element.style = 'width: 120px; height: 120px; color: blue; display: inline-block; border: 4px solid black; margin-left: 4px';
+      element.style = 'width: 120px; height: 120px; color: blue; display: inline-block; border: 4px solid black; margin-left: 4px; ';
     }
   }
 
