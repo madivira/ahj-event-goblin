@@ -6,7 +6,7 @@ export default class MovingGoblin {
 
   static init() {
     const gameboard = document.getElementsByClassName('game-board')[0];
-    gameboard.style = 'cursor: url("../src/img/hammer.png"), auto';
+    gameboard.style = 'cursor: url("https://github.com/madivira/ahj-event-goblin/blob/master/src/img/hammer.png"), auto';
     for (let i = 4; i > 0; i -= 1) {
       const raw = document.createElement('div');
       raw.className = `raw-${i}`;

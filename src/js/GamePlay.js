@@ -7,7 +7,6 @@ export default class GamePlay {
   eventClick() {
     const column = document.getElementsByClassName('game-board')[0];
 
-
     column.addEventListener('click', (event) => {
       event.preventDefault();
       this.checkClick(event.target);
