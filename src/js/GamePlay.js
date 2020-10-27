@@ -24,7 +24,6 @@ export default class GamePlay {
     }
   }
 
-
   scoring(score) {
     const hit = document.getElementsByClassName('hit-score')[0];
     const pass = document.getElementsByClassName('pass-score')[0];
