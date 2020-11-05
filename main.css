@@ -1,0 +1,10 @@
+body {
+  background: #eee;
+  text-align: center;
+}
+
+div.hit, div.pass {
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
