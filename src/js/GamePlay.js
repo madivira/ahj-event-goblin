@@ -2,15 +2,24 @@ export default class GamePlay {
   constructor() {
     this.hit = 0;
     this.pass = 0;
+    this.clickOrNo = false;
   }
 
   eventClick() {
     const column = document.getElementsByClassName('game-board')[0];
 
     column.addEventListener('click', (event) => {
+      this.clickOrNo = true;
       event.preventDefault();
       this.checkClick(event.target);
     });
+
+    setInterval(() => {
+      if (this.clickOrNo === false) {
+        this.scoring(false);
+        this.clickOrNo = false;
+      }
+    }, 1000);
   }
 
   checkClick(clickTarget) {
