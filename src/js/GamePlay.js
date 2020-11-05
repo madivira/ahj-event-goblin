@@ -2,24 +2,25 @@ export default class GamePlay {
   constructor() {
     this.hit = 0;
     this.pass = 0;
-    this.clickOrNo = false;
+    this.clickOrNo = true;
   }
 
   eventClick() {
     const column = document.getElementsByClassName('game-board')[0];
-
-    column.addEventListener('click', (event) => {
-      this.clickOrNo = true;
-      event.preventDefault();
-      this.checkClick(event.target);
-    });
-
     setInterval(() => {
       if (this.clickOrNo === false) {
         this.scoring(false);
         this.clickOrNo = false;
+      } else {
+        this.clickOrNo = false;
       }
     }, 1000);
+
+    column.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.clickOrNo = true;
+      this.checkClick(event.target);
+    });
   }
 
   checkClick(clickTarget) {
@@ -45,8 +46,9 @@ export default class GamePlay {
       if (GamePlay.checkLoss(this.pass, this.hit)) {
         this.hit = 0;
         this.pass = 0;
-        hit.textContent = this.hit;
-        pass.textContent = this.pass;
+        hit.textContent = 0;
+        pass.textContent = 0;
+        this.clickOrNo = true;
       }
     }
   }
